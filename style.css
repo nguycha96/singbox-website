@@ -1,123 +1,237 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===================================
+   SiNG BOX Premium Website
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: 'Outfit', sans-serif;
-    background: #09090B;
-    color: white;
-    line-height: 1.6;
+html{
+    scroll-behavior:smooth;
 }
 
-a {
-    color: white;
-    text-decoration: none;
+body{
+
+    font-family:'Outfit',sans-serif;
+
+    background:#08080b;
+
+    color:white;
+
+    overflow-x:hidden;
+
 }
 
-img {
-    max-width: 100%;
-    display: block;
+img{
+
+    display:block;
+
+    width:100%;
+
 }
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(10,10,12,.65);
-    backdrop-filter: blur(12px);
+a{
+
+    text-decoration:none;
+
+    color:white;
+
 }
 
-nav {
-    max-width: 1300px;
-    margin: auto;
-    padding: 20px 40px;
+/* =====================
+   CONTAINER
+===================== */
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.container{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
 }
 
-.logo h1 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 3px;
+/* =====================
+   NAVBAR
+===================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    z-index:999;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(8,8,11,.70);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
 }
 
-.logo p {
-    font-size: 12px;
-    color: #d7b6ff;
-    letter-spacing: 6px;
-}
-
-nav ul {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
-
-nav ul a {
-    transition: .3s;
-}
-
-nav ul a:hover {
-    color: #c86bff;
-}
-
-.button {
-    padding: 14px 28px;
-    border-radius: 999px;
-    background: linear-gradient(135deg,#8d3bff,#ff4bd8);
-    font-weight: 600;
-    transition: .3s;
-}
-
-.button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(255,0,255,.4);
-}
-
-.hero {
-
-    height:100vh;
+.navbar .container{
 
     display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:85px;
+
+}
+
+.logo h1{
+
+    font-size:32px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+}
+
+.logo span{
+
+    color:#d28cff;
+
+    font-size:12px;
+
+    letter-spacing:5px;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+nav a{
+
+    color:#ddd;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#ff67da;
+
+}
+
+.btn-primary{
+
+    padding:15px 28px;
+
+    border-radius:40px;
+
+    background:linear-gradient(135deg,#8b5cf6,#ff4fd8);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 30px rgba(255,0,180,.35);
+
+}
+
+.btn-secondary{
+
+    padding:15px 28px;
+
+    border-radius:40px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    color:white;
+
+}
+
+/* =====================
+   HERO
+===================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     text-align:center;
 
-    padding:40px;
+    position:relative;
 
     background:
-    radial-gradient(circle at top,#6020ff 0%,transparent 45%),
-    radial-gradient(circle at bottom,#ff3fb5 0%,transparent 35%),
-    #09090B;
+    radial-gradient(circle at top,#6428ff 0%,transparent 40%),
+    radial-gradient(circle at bottom,#ff2dbf 0%,transparent 35%),
+    #08080b;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75));
+
 }
 
 .hero-content{
+
+    position:relative;
+
+    z-index:2;
 
     max-width:850px;
 
 }
 
-.hero h1{
+.hero-tag{
 
-    font-size:72px;
+    display:inline-block;
 
-    font-weight:800;
+    margin-bottom:25px;
 
-    margin-bottom:10px;
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#e6b5ff;
+
+    font-size:14px;
 
 }
 
-.hero h2{
+.hero h1{
 
-    font-size:34px;
+    font-size:82px;
 
-    color:#d7b6ff;
+    line-height:1;
 
     margin-bottom:30px;
 
@@ -125,52 +239,116 @@ nav ul a:hover {
 
 .hero p{
 
-    color:#d0d0d0;
+    font-size:22px;
 
-    font-size:20px;
+    color:#cfcfcf;
 
     margin-bottom:45px;
 
 }
 
-.hero-button{
+.hero-buttons{
 
-    display:inline-block;
+    display:flex;
 
-    padding:18px 38px;
+    justify-content:center;
 
-    border-radius:999px;
+    gap:20px;
 
-    background:linear-gradient(135deg,#8d3bff,#ff4bd8);
+    flex-wrap:wrap;
 
-    font-weight:700;
+}
+/* =====================
+   FEATURES
+===================== */
 
-    transition:.3s;
+.features{
+
+    padding:90px 0;
 
 }
 
-.hero-button:hover{
+.features .container{
 
-    transform:scale(1.05);
+    display:grid;
 
-    box-shadow:0 0 40px rgba(255,0,255,.5);
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
 
 }
-/* ---------- ROOMS ---------- */
+
+.feature{
+
+    padding:40px;
+
+    background:#111118;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:22px;
+
+    transition:.35s;
+
+}
+
+.feature:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#9f63ff;
+
+    box-shadow:0 20px 40px rgba(140,90,255,.18);
+
+}
+
+.feature h3{
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.feature p{
+
+    color:#bfbfbf;
+
+    line-height:1.7;
+
+}
+
+/* =====================
+   ROOMS
+===================== */
 
 .rooms{
-    max-width:1300px;
-    margin:auto;
-    padding:120px 40px;
+
+    padding:120px 0;
+
 }
 
-.rooms h2{
+.rooms h2,
+.gallery h2,
+.contact h2{
 
     text-align:center;
 
     font-size:48px;
 
-    margin-bottom:70px;
+    margin-bottom:20px;
+
+}
+
+.section-text{
+
+    text-align:center;
+
+    color:#bdbdbd;
+
+    max-width:700px;
+
+    margin:0 auto 60px;
 
 }
 
@@ -178,23 +356,21 @@ nav ul a:hover {
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
-    gap:35px;
+    gap:30px;
 
 }
 
 .room-card{
 
-    background:#14141A;
-
-    border-radius:28px;
-
     overflow:hidden;
 
-    transition:.35s;
+    background:#111118;
 
-    border:1px solid rgba(255,255,255,.05);
+    border-radius:24px;
+
+    transition:.35s;
 
 }
 
@@ -202,97 +378,139 @@ nav ul a:hover {
 
     transform:translateY(-10px);
 
-    box-shadow:0 20px 50px rgba(180,70,255,.25);
+    box-shadow:0 20px 45px rgba(255,0,180,.18);
 
 }
 
 .room-card img{
 
-    width:100%;
-
-    height:260px;
+    aspect-ratio:4/3;
 
     object-fit:cover;
 
 }
 
-.room-card h3{
+.room-content{
 
-    padding:28px 28px 10px;
-
-    font-size:30px;
+    padding:28px;
 
 }
 
-.room-card p{
+.room-content h3{
 
-    padding:0 28px 30px;
+    margin-bottom:15px;
 
-    color:#c8c8c8;
+    font-size:26px;
 
 }
 
-/* ---------- FOOTER ---------- */
+.room-content p{
 
-footer{
+    color:#bfbfbf;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+.room-content a{
+
+    color:#ff6cd9;
+
+    font-weight:600;
+
+}
+
+/* =====================
+   GALLERY
+===================== */
+
+.gallery{
+
+    padding:120px 0;
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.gallery-item{
+
+    background:linear-gradient(135deg,#5728ff,#ff39c8);
+
+    border-radius:20px;
+
+    aspect-ratio:16/10;
+
+}
+
+/* =====================
+   CONTACT
+===================== */
+
+.contact{
+
+    padding:120px 0;
+
+}
+
+.contact-info{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:50px;
 
     text-align:center;
 
-    padding:80px 20px;
+}
 
-    border-top:1px solid rgba(255,255,255,.08);
+.contact-info div{
 
-    margin-top:80px;
+    padding:35px;
+
+    border-radius:20px;
+
+    background:#111118;
 
 }
 
-footer h2{
+/* =====================
+   FOOTER
+===================== */
 
-    font-size:34px;
+footer{
 
-    margin-bottom:10px;
+    padding:60px 0;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    color:#999;
 
 }
 
-footer p{
-
-    color:#9f9f9f;
-
-    margin-top:8px;
-
-}
-
-/* ---------- MOBILE ---------- */
+/* =====================
+   MOBILE
+===================== */
 
 @media(max-width:900px){
 
-nav{
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-nav ul{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:20px;
-
-}
-
 .hero h1{
 
-font-size:52px;
-
-}
-
-.hero h2{
-
-font-size:24px;
+font-size:54px;
 
 }
 
@@ -302,35 +520,72 @@ font-size:18px;
 
 }
 
-.rooms h2{
+nav{
 
-font-size:36px;
+display:none;
+
+}
+
+.features .container,
+.contact-info{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:1fr;
 
 }
 
 }
-/* ---------- ANIMATIONS ---------- */
 
-.hidden{
+/* =====================
+   ANIMATIONS
+===================== */
 
-    opacity:0;
+.room-card,
+.feature{
 
-    transform:translateY(40px);
-
-    transition:all .8s ease;
-
-}
-
-.show{
-
-    opacity:1;
-
-    transform:translateY(0);
+transition:.35s ease;
 
 }
 
-html{
+.hero h1{
 
-    scroll-behavior:smooth;
+animation:fadeUp 1s ease;
+
+}
+
+.hero p{
+
+animation:fadeUp 1.4s ease;
+
+}
+
+.hero-buttons{
+
+animation:fadeUp 1.8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }
