@@ -56,7 +56,7 @@ a{
    NAVBAR
 ===================== */
 
-.navbar{
+.header{
 
     position:fixed;
 
@@ -74,7 +74,7 @@ a{
 
 }
 
-.navbar .container{
+.header .container{
 
     display:flex;
 
