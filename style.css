@@ -1,0 +1,331 @@
+/* ===================================
+   SiNG BOX Premium Website
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Outfit',sans-serif;
+    background:#08080b;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+/* =====================
+   HEADER
+===================== */
+
+.header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(8,8,11,.72);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:82px;
+}
+
+.logo{
+    display:flex;
+    flex-direction:column;
+}
+
+.logo h1{
+    font-size:30px;
+    letter-spacing:3px;
+    font-weight:800;
+}
+
+.logo span{
+    font-size:12px;
+    letter-spacing:5px;
+    color:#d28cff;
+}
+
+.nav{
+    display:flex;
+    gap:38px;
+}
+
+.nav a{
+    color:#ddd;
+    transition:.3s;
+}
+
+.nav a:hover{
+    color:#fff;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:999px;
+    background:#8b5cf6;
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    background:#a855f7;
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.25);
+}
+
+/* =====================
+   HERO
+===================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    background:
+        radial-gradient(circle at top,#6128ff 0%,transparent 40%),
+        radial-gradient(circle at bottom,#ff2cbf 0%,transparent 35%),
+        #08080b;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75));
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.hero-tag{
+    display:inline-block;
+    margin-bottom:24px;
+    padding:10px 20px;
+    border-radius:999px;
+    background:rgba(255,255,255,.08);
+    color:#d9a5ff;
+}
+
+.hero h1{
+    font-size:82px;
+    line-height:1;
+    margin-bottom:30px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#d0d0d0;
+    margin-bottom:45px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* =====================
+   FEATURES
+===================== */
+
+.features{
+    padding:100px 0;
+}
+
+.features .container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+
+.feature{
+    background:#111119;
+    padding:35px;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.06);
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-8px);
+    border-color:#8b5cf6;
+}
+
+.feature h3{
+    margin-bottom:16px;
+    font-size:24px;
+}
+
+.feature p{
+    color:#bdbdbd;
+    line-height:1.7;
+}
+
+/* =====================
+   ROOMS
+===================== */
+
+.rooms,
+.gallery,
+.contact{
+    padding:120px 0;
+}
+
+.rooms h2,
+.gallery h2,
+.contact h2{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:18px;
+}
+
+.section-text{
+    text-align:center;
+    color:#bdbdbd;
+    margin-bottom:60px;
+}
+
+.room-grid,
+.gallery-grid,
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.room-card,
+.gallery-item,
+.contact-card{
+    background:#111119;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.06);
+    transition:.35s;
+}
+
+.room-card:hover,
+.gallery-item:hover,
+.contact-card:hover{
+    transform:translateY(-8px);
+    border-color:#8b5cf6;
+}
+
+.room-content,
+.contact-card{
+    padding:28px;
+}
+
+.room-content h3{
+    margin-bottom:12px;
+}
+
+.room-content p,
+.contact-card p{
+    color:#bdbdbd;
+    line-height:1.7;
+}
+
+.gallery-item{
+    height:260px;
+    background:
+        linear-gradient(135deg,#8b5cf6,#ff2cbf);
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+footer{
+    padding:40px 0;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+}
+
+.footer-logo h2{
+    font-size:28px;
+}
+
+.footer-logo span{
+    color:#d28cff;
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+footer p{
+    margin-top:18px;
+    color:#8d8d8d;
+}
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width:900px){
+
+    .header .container{
+        flex-direction:column;
+        height:auto;
+        padding:20px 0;
+        gap:18px;
+    }
+
+    .nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .rooms h2,
+    .gallery h2,
+    .contact h2{
+        font-size:36px;
+    }
+
+}
