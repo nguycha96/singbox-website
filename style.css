@@ -329,6 +329,16 @@ a{
     line-height:1.7;
 }
 
+.room-btn{
+
+    margin-top:22px;
+
+    padding:12px 24px;
+
+    font-size:.9rem;
+
+}
+
 .gallery-item{
     height:260px;
     background:
