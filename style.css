@@ -345,6 +345,14 @@ a{
 
 }
 
+.room-card:hover .room-btn{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
 .gallery-item{
     height:260px;
     background:
