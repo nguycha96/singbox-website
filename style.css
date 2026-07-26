@@ -255,6 +255,17 @@ a{
     padding:28px;
 }
 
+.room-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.room-card:hover img{
+    transform:scale(1.05);
+}
+
 .room-content h3{
     margin-bottom:12px;
 }
