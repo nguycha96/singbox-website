@@ -337,6 +337,12 @@ a{
 
     font-size:.9rem;
 
+    opacity:0;
+
+    transform:translateY(10px);
+
+    transition:.35s;
+
 }
 
 .gallery-item{
