@@ -246,7 +246,7 @@ a{
 .room-card:hover,
 .gallery-item:hover,
 .contact-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-12px);
     border-color:#8b5cf6;
 }
 
@@ -268,6 +268,30 @@ a{
 
 .room-content h3{
     margin-bottom:12px;
+}
+
+.room-size{
+
+    display:inline-block;
+
+    margin:10px 0 16px;
+
+    padding:6px 14px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+    color:#d8d8d8;
+
+    background:rgba(255,255,255,.05);
+
+    letter-spacing:.5px;
+
 }
 
 .room-content p,
