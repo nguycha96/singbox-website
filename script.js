@@ -65,16 +65,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const langButtons = document.querySelectorAll(".lang-btn");
 
+const translations = {
+
+    en: {
+        home: "Home",
+        rooms: "Rooms",
+        contact: "Contact",
+        book: "Book Now"
+    },
+
+    fi: {
+        home: "Etusivu",
+        rooms: "Huoneet",
+        contact: "Yhteystiedot",
+        book: "Varaa"
+    }
+
+};
+
 langButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
         langButtons.forEach(btn => btn.classList.remove("active"));
-
         button.classList.add("active");
+
+        const lang = button.textContent.toLowerCase();
+
+        document.getElementById("nav-home").textContent = translations[lang].home;
+        document.getElementById("nav-rooms").textContent = translations[lang].rooms;
+        document.getElementById("nav-contact").textContent = translations[lang].contact;
+        document.getElementById("book-btn").textContent = translations[lang].book;
 
     });
 
 });
-
 });
