@@ -70,15 +70,15 @@ const translations = {
     en: {
         home: "Home",
         rooms: "Rooms",
-        contact: "Contact",
-        book: "Book Now"
+        pricing: "Pricing",
+        contact: "Contact"
     },
 
     fi: {
         home: "Etusivu",
         rooms: "Huoneet",
-        contact: "Yhteystiedot",
-        book: "Varaa"
+        pricing: "Hinnasto",
+        contact: "Yhteystiedot"
     }
 
 };
