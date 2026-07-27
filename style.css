@@ -541,6 +541,14 @@ footer p{
 
     border-top:1px solid rgba(255,255,255,.08);
 
+    transition:.3s;
+
+}
+
+.pricing-row:hover{
+
+    background:rgba(139,92,246,.08);
+
 }
 
 .pricing-row:nth-child(even){
