@@ -71,14 +71,16 @@ const translations = {
         home: "Home",
         rooms: "Rooms",
         pricing: "Pricing",
-        contact: "Contact"
+        contact: "Contact",
+        book: "Book Now"
     },
 
     fi: {
         home: "Etusivu",
         rooms: "Huoneet",
         pricing: "Hinnasto",
-        contact: "Yhteystiedot"
+        contact: "Yhteystiedot",
+        book: "Varaa"
     }
 
 };
