@@ -349,6 +349,18 @@ a{
 
 .room-size{
 
+   .room-price{
+
+    margin:16px 0 18px;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    color:#8b5cf6;
+
+}
+
     display:inline-block;
 
     margin:10px 0 16px;
