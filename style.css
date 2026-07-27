@@ -572,9 +572,17 @@ footer p{
 
 .pricing-row{
 
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    align-items:center;
+
     border-top:1px solid rgba(255,255,255,.08);
 
     transition:.3s;
+
+    position:relative;
 
 }
 
