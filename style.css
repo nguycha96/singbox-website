@@ -488,3 +488,63 @@ footer p{
 .showcase-grid img:hover{
     transform:scale(1.03);
 }
+
+/* =====================
+   Pricing
+===================== */
+
+.pricing{
+    padding:100px 0;
+}
+
+.pricing-table{
+
+    margin-top:50px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:#161616;
+
+}
+
+.pricing-header,
+.pricing-row{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+}
+
+.pricing-header{
+
+    background:#8b5cf6;
+
+    color:#fff;
+
+    font-weight:700;
+
+}
+
+.pricing-header div,
+.pricing-row div{
+
+    padding:22px 28px;
+
+}
+
+.pricing-row{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.pricing-row:nth-child(even){
+
+    background:rgba(255,255,255,.02);
+
+}
