@@ -545,7 +545,28 @@ footer p{
 .pricing-header div,
 .pricing-row div{
 
-    padding:22px 28px;
+    padding:26px 32px;
+
+}
+
+.pricing-row div:first-child{
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    line-height:1.5;
+
+}
+
+.pricing-row div:nth-child(2),
+.pricing-row div:nth-child(3){
+
+    font-size:1.08rem;
+
+    font-weight:700;
+
+    color:#f5f5f5;
 
 }
 
