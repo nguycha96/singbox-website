@@ -505,6 +505,8 @@ footer p{
 
     overflow-y:hidden;
 
+   -webkit-overflow-scrolling: touch;
+
     background:#161616;
 
 }
