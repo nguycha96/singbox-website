@@ -485,6 +485,17 @@ footer p{
     transform:scale(1.03);
 }
 
+.pricing-scroll{
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+}
+
+.pricing-scroll .pricing-table{
+    min-width:900px;
+}
+
 /* =====================
    Pricing
 ===================== */
@@ -494,21 +505,10 @@ footer p{
 }
 
 .pricing-table{
-
     margin-top:50px;
-
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:24px;
-
-    overflow-x:auto;
-
-    overflow-y:hidden;
-
-   -webkit-overflow-scrolling: touch;
-
     background:#161616;
-
 }
 
 .pricing-header,
