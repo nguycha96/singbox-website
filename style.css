@@ -725,3 +725,87 @@ footer p{
     color:#8b5cf6;
 
 }
+
+/* =====================
+   ROOM CAROUSEL
+===================== */
+
+.room-carousel{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:70px 0 40px;
+    overflow:hidden;
+}
+
+.carousel-track{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    transition:.5s ease;
+}
+
+.carousel-slide{
+    width:220px;
+    transition:.45s;
+    opacity:.45;
+    transform:scale(.75);
+    filter:blur(2px);
+}
+
+.carousel-slide img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    border-radius:28px;
+}
+
+.carousel-slide.active{
+    width:360px;
+    opacity:1;
+    transform:scale(1);
+    filter:none;
+}
+
+.carousel-slide.active img{
+    box-shadow:0 0 60px rgba(139,92,246,.45);
+}
+
+.carousel-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:50%;
+    background:#8b5cf6;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+    z-index:10;
+}
+
+.carousel-btn:hover{
+    background:#a855f7;
+}
+
+.prev{
+    left:0;
+}
+
+.next{
+    right:0;
+}
+
+.room-info{
+    text-align:center;
+    max-width:600px;
+    margin:auto;
+}
+
+.room-btn-static{
+    margin-top:24px;
+}
