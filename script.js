@@ -149,6 +149,10 @@ function drawCarousel(){
     slide.className="card";
 });
 
+    const back = (current + 2) % slides.length;
+
+slides[back].classList.add("back");
+
     const left=(current-1+slides.length)%slides.length;
     const right=(current+1)%slides.length;
 
@@ -179,5 +183,7 @@ prev.onclick=()=>{
 };
 
 drawCarousel();
-    
+
+alert(slides.length);
+
 });
