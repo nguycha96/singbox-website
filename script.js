@@ -146,26 +146,24 @@ let current = 0;
 function drawCarousel(){
 
     slides.forEach(slide=>{
-    slide.className="card";
-});
+        slide.className = "card";
+    });
 
+    const left = (current - 1 + slides.length) % slides.length;
+    const right = (current + 1) % slides.length;
     const back = (current + 2) % slides.length;
-
-slides[back].classList.add("back");
-
-    const left=(current-1+slides.length)%slides.length;
-    const right=(current+1)%slides.length;
 
     slides[current].classList.add("active");
     slides[left].classList.add("left");
     slides[right].classList.add("right");
+    slides[back].classList.add("back");
 
-    title.textContent=rooms[current].title;
-    size.textContent=rooms[current].size;
-    price.textContent=rooms[current].price;
-    text.textContent=rooms[current].text;
+    title.textContent = rooms[current].title;
+    size.textContent = rooms[current].size;
+    price.textContent = rooms[current].price;
+    text.textContent = rooms[current].text;
 }
-
+    
 next.onclick=()=>{
 
     current=(current+1)%slides.length;
