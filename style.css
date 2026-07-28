@@ -348,39 +348,23 @@ a{
 }
 
 .room-size{
-
-   .room-price{
-
-    margin:16px 0 18px;
-
-    font-size:1.1rem;
-
-    font-weight:700;
-
-    color:#8b5cf6;
-
+    display:inline-block;
+    margin:10px 0 16px;
+    padding:6px 14px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:999px;
+    font-size:.8rem;
+    font-weight:600;
+    color:#d8d8d8;
+    background:rgba(255,255,255,.05);
+    letter-spacing:.5px;
 }
 
-    display:inline-block;
-
-    margin:10px 0 16px;
-
-    padding:6px 14px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    border-radius:999px;
-
-    font-size:.8rem;
-
-    font-weight:600;
-
-    color:#d8d8d8;
-
-    background:rgba(255,255,255,.05);
-
-    letter-spacing:.5px;
-
+.room-price{
+    margin:16px 0 18px;
+    font-size:1.1rem;
+    font-weight:700;
+    color:#8b5cf6;
 }
 
 .room-content p,
