@@ -501,7 +501,9 @@ footer p{
 
     border-radius:24px;
 
-    overflow:hidden;
+    overflow-x:auto;
+
+    overflow-y:hidden;
 
     background:#161616;
 
@@ -513,6 +515,8 @@ footer p{
     display:grid;
 
     grid-template-columns:2fr repeat(4,1fr);
+
+   min-width:900px;
 
 }
 
