@@ -146,8 +146,8 @@ let current = 0;
 function drawCarousel(){
 
     slides.forEach(slide=>{
-        slide.className="carousel-slide hidden";
-    });
+    slide.className="card";
+});
 
     const left=(current-1+slides.length)%slides.length;
     const right=(current+1)%slides.length;
