@@ -131,49 +131,4 @@ langButtons.forEach(button => {
 }
 ];
 
-const slides = document.querySelectorAll(".carousel-slide");
-
-const title = document.querySelector(".room-info h3");
-const size = document.querySelector(".room-size");
-const price = document.querySelector(".room-price");
-const text = document.querySelector(".room-info p");
-
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-
-let current = 0;
-
-function updateCarousel(){
-
-    slides.forEach(slide=>slide.classList.remove("active"));
-
-    slides[current].classList.add("active");
-
-    title.textContent = rooms[current].title;
-    size.textContent = rooms[current].size;
-    price.textContent = rooms[current].price;
-    text.textContent = rooms[current].text;
-}
-
-next.addEventListener("click",()=>{
-
-    current++;
-
-    if(current>=slides.length) current=0;
-
-    updateCarousel();
-
-});
-
-prev.addEventListener("click",()=>{
-
-    current--;
-
-    if(current<0) current=slides.length-1;
-
-    updateCarousel();
-
-});
-
-updateCarousel();
 });
