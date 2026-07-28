@@ -528,7 +528,7 @@ footer p{
 
     display:grid;
 
-    grid-template-columns:2fr 1fr 1fr;
+    grid-template-columns:2fr repeat(4,1fr);
 
 }
 
@@ -559,8 +559,7 @@ footer p{
 
 }
 
-.pricing-row div:nth-child(2),
-.pricing-row div:nth-child(3){
+.pricing-row div:not(:first-child){
 
     font-size:1.08rem;
 
@@ -574,7 +573,7 @@ footer p{
 
     display:grid;
 
-    grid-template-columns:2fr 1fr 1fr;
+    grid-template-columns:2fr repeat(4,1fr);
 
     align-items:center;
 
