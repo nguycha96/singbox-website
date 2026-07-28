@@ -733,99 +733,78 @@ footer p{
 .room-carousel{
     position:relative;
     width:100%;
-    height:480px;
-    overflow:hidden;
+    height:520px;
     display:flex;
     justify-content:center;
     align-items:center;
+    overflow:hidden;
 }
 
-.carousel-track{
+.carousel{
     position:relative;
-    width:100%;
-    height:100%;
+    width:900px;
+    height:420px;
 }
 
-.carousel-slide{
+.card{
     position:absolute;
     left:50%;
     top:50%;
-    width:420px;
+    width:320px;
     transform:translate(-50%,-50%);
-    transition:all .6s ease;
+    transition:.7s;
+    opacity:0;
 }
 
-.carousel-slide img{
+.card img{
     width:100%;
-    border-radius:26px;
+    border-radius:28px;
     box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
-/* Keskikuva */
-
-.carousel-slide.center{
-    transform:translate(-50%,-50%) scale(1);
+.card.active{
     opacity:1;
+    transform:translate(-50%,-50%) scale(1);
     z-index:5;
 }
 
-/* Vasen */
-
-.carousel-slide.left{
-    transform:translate(-135%,-50%) scale(.72);
-    opacity:.45;
+.card.left{
+    opacity:.55;
+    transform:translate(-150%,-50%) scale(.8);
     z-index:3;
 }
 
-/* Oikea */
-
-.carousel-slide.right{
-    transform:translate(35%,-50%) scale(.72);
-    opacity:.45;
+.card.right{
+    opacity:.55;
+    transform:translate(50%,-50%) scale(.8);
     z-index:3;
 }
 
-/* Takana */
-
-.carousel-slide.hidden{
-    transform:translate(-50%,-50%) scale(.45);
-    opacity:0;
+.card.back{
+    opacity:.15;
+    transform:translate(-50%,-50%) scale(.6);
     z-index:1;
 }
 
-/* Hehku */
-
-.carousel-slide.center img{
-    box-shadow:
-        0 0 45px rgba(139,92,246,.75),
-        0 25px 70px rgba(0,0,0,.55);
-}
-
-/* Nuolet */
-
-.carousel-btn{
+.carousel-arrow{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    width:58px;
-    height:58px;
+    width:60px;
+    height:60px;
     border:none;
     border-radius:50%;
     background:#8b5cf6;
-    color:white;
-    font-size:34px;
+    color:#fff;
+    font-size:32px;
     cursor:pointer;
-    z-index:100;
+    z-index:20;
 }
 
-.carousel-btn:hover{
-    background:#a855f7;
+.carousel-arrow.left{
+    left:25px;
 }
 
-.prev{
-    left:20px;
-}
-
-.next{
-    right:20px;
+.carousel-arrow.right{
+    right:25px;
 }
