@@ -534,6 +534,10 @@ footer p{
 
 .pricing-header{
 
+    display:grid;
+
+    grid-template-columns:2fr repeat(4,1fr);
+
     background:#8b5cf6;
 
     color:#fff;
