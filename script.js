@@ -217,5 +217,94 @@ prev.onclick = ()=>{
 };
 
 updateCarousel();
+
+    const carousel = document.querySelector(".room-carousel");
+const cards = document.querySelectorAll(".carousel-slide");
+
+let angle = 0;
+
+const rooms = [
+{
+title:"Gangnam Lounge",
+size:"Up to 6 Persons",
+price:"Starting from €40/hour",
+text:"Luxury lounge with premium interiors and elegant golden lighting."
+},
+{
+title:"Seoul Lounge",
+size:"Up to 6 Persons",
+price:"Starting from €40/hour",
+text:"Elegant pink lounge with a modern Korean luxury atmosphere."
+},
+{
+title:"Hongdae Neon",
+size:"Up to 4 Persons",
+price:"Starting from €30/hour",
+text:"Vibrant purple neon room inspired by Hongdae nightlife."
+},
+{
+title:"Itaewon Gold",
+size:"Up to 4 Persons",
+price:"Starting from €30/hour",
+text:"Intimate luxury room with warm golden tones and premium finishes."
+}
+];
+
+const title = document.querySelector(".room-info h3");
+const size = document.querySelector(".room-size");
+const price = document.querySelector(".room-price");
+const text = document.querySelector(".room-info p");
+
+function updateCarousel(){
+
+    cards.forEach((card,index)=>{
+
+        const a=(360/cards.length)*index+angle;
+        const rad=a*Math.PI/180;
+
+        const x=Math.sin(rad)*280;
+        const z=Math.cos(rad)*280;
+
+        const scale=(z+280)/560*0.5+0.6;
+
+        card.style.transform=
+        `translateX(${x}px) translateZ(${z}px) scale(${scale})`;
+
+        card.style.zIndex=Math.round(scale*100);
+
+        if(Math.abs(a%360)<45 || Math.abs((a%360)-360)<45){
+
+            title.textContent=rooms[index].title;
+            size.textContent=rooms[index].size;
+            price.textContent=rooms[index].price;
+            text.textContent=rooms[index].text;
+
+            card.classList.add("active");
+
+        }else{
+
+            card.classList.remove("active");
+
+        }
+
+    });
+
+}
+
+document.querySelector(".next").onclick=()=>{
+
+    angle-=90;
+    updateCarousel();
+
+};
+
+document.querySelector(".prev").onclick=()=>{
+
+    angle+=90;
+    updateCarousel();
+
+};
+
+updateCarousel();
     
 });
