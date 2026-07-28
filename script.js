@@ -182,6 +182,6 @@ prev.onclick=()=>{
 
 drawCarousel();
 
-alert(slides.length);
+console.log(slides);
 
 });
