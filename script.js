@@ -104,9 +104,6 @@ langButtons.forEach(button => {
 
 });
 
-}
-];
-
 const rooms = [
 {
     title:"Gangnam Lounge",
