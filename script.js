@@ -152,7 +152,7 @@ function drawCarousel(){
     const left=(current-1+slides.length)%slides.length;
     const right=(current+1)%slides.length;
 
-    slides[current].classList.add("center");
+    slides[current].classList.add("active");
     slides[left].classList.add("left");
     slides[right].classList.add("right");
 
