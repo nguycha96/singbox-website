@@ -134,15 +134,15 @@ const rooms = [
 }
 ];
 
-const slides = document.querySelectorAll(".carousel-slide");
+const slides = document.querySelectorAll(".card");
 
-const title = document.querySelector(".room-info h3");
-const size = document.querySelector(".room-size");
-const price = document.querySelector(".room-price");
-const text = document.querySelector(".room-info p");
+const title = document.getElementById("roomTitle");
+const size = document.getElementById("roomSize");
+const price = document.getElementById("roomPrice");
+const text = document.getElementById("roomText");
 
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+const prev = document.querySelector(".carousel-arrow.left");
+const next = document.querySelector(".carousel-arrow.right");
 
 let current = 0;
 
