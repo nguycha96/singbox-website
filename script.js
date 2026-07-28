@@ -103,4 +103,77 @@ langButtons.forEach(button => {
     });
 
 });
+
+    const rooms = [
+{
+    title:"Gangnam Lounge",
+    size:"Up to 6 Persons",
+    price:"Starting from €40/hour",
+    text:"Luxury lounge with premium interiors and elegant golden lighting."
+},
+{
+    title:"Seoul Lounge",
+    size:"Up to 6 Persons",
+    price:"Starting from €40/hour",
+    text:"Elegant pink lounge with a modern Korean luxury atmosphere."
+},
+{
+    title:"Hongdae Neon",
+    size:"Up to 4 Persons",
+    price:"Starting from €30/hour",
+    text:"Vibrant purple neon room inspired by Hongdae nightlife."
+},
+{
+    title:"Itaewon Gold",
+    size:"Up to 4 Persons",
+    price:"Starting from €30/hour",
+    text:"Intimate luxury room with warm golden tones and premium finishes."
+}
+];
+
+const slides = document.querySelectorAll(".carousel-slide");
+
+const title = document.querySelector(".room-info h3");
+const size = document.querySelector(".room-size");
+const price = document.querySelector(".room-price");
+const text = document.querySelector(".room-info p");
+
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+
+let current = 0;
+
+function updateCarousel(){
+
+    slides.forEach(slide=>slide.classList.remove("active"));
+
+    slides[current].classList.add("active");
+
+    title.textContent = rooms[current].title;
+    size.textContent = rooms[current].size;
+    price.textContent = rooms[current].price;
+    text.textContent = rooms[current].text;
+}
+
+next.addEventListener("click",()=>{
+
+    current++;
+
+    if(current>=slides.length) current=0;
+
+    updateCarousel();
+
+});
+
+prev.addEventListener("click",()=>{
+
+    current--;
+
+    if(current<0) current=slides.length-1;
+
+    updateCarousel();
+
+});
+
+updateCarousel();
 });
