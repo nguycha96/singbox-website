@@ -754,6 +754,7 @@ footer p{
     transform:translate(-50%,-50%);
     transition:all .7s ease;
     opacity:0;
+    overflow:visible;
 }
 
 .card img{
