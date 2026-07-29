@@ -532,10 +532,12 @@ footer p{
 .pricing-table{
     width:100%;
     min-width:900px;
-    border-collapse:collapse;
+
+    border-collapse:separate;
+    border-spacing:0;
+
     background:#161616;
     border-radius:24px;
-    overflow:hidden;
 }
 
 .pricing-table th,
@@ -575,7 +577,25 @@ footer p{
 .pricing-table td:first-child{
     position:sticky;
     left:0;
-    z-index:3;
+    z-index:20;
+    min-width:160px;
+}
+
+.pricing-scroll{
+    position:relative;
+    overflow-x:auto;
+}
+
+.pricing-table th:first-child{
+    background:#8b5cf6;
+}
+
+.pricing-table td:first-child{
+    background:#161616;
+}
+
+.pricing-table tbody tr:nth-child(even) td:first-child{
+    background:#1b1b1b;
 }
 
 .pricing-table th:first-child{
