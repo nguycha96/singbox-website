@@ -771,9 +771,10 @@ footer p{
 
 .card.active img{
     box-shadow:
-        0 35px 80px rgba(0,0,0,.55),
-        0 0 30px rgba(139,92,246,.45),
-        0 0 80px rgba(139,92,246,.25);
+        0 35px 60px rgba(0,0,0,.6),
+        0 0 40px rgba(168,85,247,.7),
+        0 0 90px rgba(168,85,247,.5),
+        0 0 140px rgba(168,85,247,.3);
 }
 
 .card.left{
