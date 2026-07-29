@@ -817,15 +817,21 @@ footer p{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    width:60px;
-    height:60px;
+    width:48px;
+    height:48px;
     border:none;
     border-radius:50%;
     background:#8b5cf6;
     color:#fff;
-    font-size:32px;
+    font-size:24px;
     cursor:pointer;
     z-index:20;
+    transition:.25s;
+}
+
+.carousel-arrow:hover{
+    transform:translateY(-50%) scale(1.08);
+    background:#a855f7;
 }
 
 .carousel-arrow.left{
