@@ -189,11 +189,13 @@ console.log(slides);
 const carousel = document.querySelector(".room-carousel");
 
 carousel.addEventListener("touchstart", (e) => {
+    console.log("touchstart");
     startX = e.touches[0].clientX;
 }, { passive: true });
 
 carousel.addEventListener("touchend", (e) => {
 
+    console.log("touchend");
     const endX = e.changedTouches[0].clientX;
     const diff = startX - endX;
 
