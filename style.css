@@ -661,6 +661,10 @@ footer p{
    BAR MENU
 ===================== */
 
+.menu{
+    scroll-margin-top:110px;
+}
+
 .menu-grid{
 
     display:grid;
