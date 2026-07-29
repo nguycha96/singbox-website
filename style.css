@@ -769,12 +769,18 @@ footer p{
     z-index:10;
 }
 
-.card.active img{
-    box-shadow:
-        0 35px 60px rgba(0,0,0,.6),
-        0 0 40px rgba(168,85,247,.7),
-        0 0 90px rgba(168,85,247,.5),
-        0 0 140px rgba(168,85,247,.3);
+.card.active::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-35px;
+    transform:translateX(-50%);
+    width:70%;
+    height:45px;
+    background:#8b5cf6;
+    filter:blur(45px);
+    opacity:.7;
+    z-index:-1;
 }
 
 .card.left{
