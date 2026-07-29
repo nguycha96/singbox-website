@@ -833,6 +833,12 @@ footer p{
     text-align:center;
 }
 
+.room-info h3{
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
 .room-info p{
     max-width:600px;
 }
