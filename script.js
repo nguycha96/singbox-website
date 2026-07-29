@@ -182,12 +182,6 @@ prev.onclick=()=>{
 
 drawCarousel();
 
-    // Auto rotate every 5 seconds
-setInterval(() => {
-    current = (current + 1) % slides.length;
-    drawCarousel();
-}, 5000);
-
 console.log(slides);
 
     let startX = 0;
