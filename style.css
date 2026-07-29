@@ -488,8 +488,33 @@ footer p{
 .pricing-scroll{
     width:100%;
     overflow-x:auto;
-    overflow-y:hidden;
+    overflow-y:visible;
     -webkit-overflow-scrolling:touch;
+    position:relative;
+}
+
+.pricing-table{
+    border-collapse:separate;
+    border-spacing:0;
+}
+
+.pricing-table th:first-child,
+.pricing-table td:first-child{
+    position:sticky;
+    left:0;
+    z-index:10;
+}
+
+.pricing-table th:first-child{
+    background:#8b5cf6;
+}
+
+.pricing-table td:first-child{
+    background:#161616;
+}
+
+.pricing-table tbody tr:nth-child(even) td:first-child{
+    background:#1b1b1b;
 }
 
 .pricing-scroll .pricing-table{
@@ -872,30 +897,3 @@ footer p{
     margin-top:24px;
 }
 
-/* Sticky ensimmäinen sarake hinnastoon */
-
-.pricing-header div:first-child,
-.pricing-row div:first-child{
-    position: sticky;
-    left: 0;
-    z-index: 5;
-    background: #161616;
-}
-
-.pricing-header div:first-child{
-    background:#8b5cf6;
-    z-index:6;
-}
-
-.pricing-row:nth-child(even) div:first-child{
-    background:#1b1b1b;
-}
-
-.pricing-row:nth-child(odd) div:first-child{
-    background:#161616;
-}
-
-.pricing-header div:first-child,
-.pricing-row div:first-child{
-    box-shadow:8px 0 16px rgba(0,0,0,.25);
-}
