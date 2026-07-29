@@ -768,31 +768,27 @@ footer p{
     opacity:1;
     transform:translate(-50%,-50%) scale(1.25);
     z-index:10;
-    filter: drop-shadow(0 0 40px rgba(139,92,246,.55));
 }
 
 .card.active img{
     box-shadow:
-        0 30px 80px rgba(0,0,0,.7),
-        0 25px 60px rgba(139,92,246,.55),
-        0 50px 120px rgba(139,92,246,.45),
-        0 80px 180px rgba(139,92,246,.35);
+        0 35px 70px rgba(0,0,0,.65),
+        0 18px 35px rgba(139,92,246,.20);
 }
 
 .card.active::after{
     content:"";
     position:absolute;
     left:50%;
-    bottom:-70px;
+    bottom:-35px;
     transform:translateX(-50%);
-    width:90%;
-    height:120px;
+    width:65%;
+    height:45px;
+    background:rgba(139,92,246,.45);
+    filter:blur(35px);
     border-radius:50%;
-    background:#8b5cf6;
-    filter:blur(80px);
-    opacity:1;
-    z-index:5;
     pointer-events:none;
+    z-index:-1;
 }
 
 .card.left{
