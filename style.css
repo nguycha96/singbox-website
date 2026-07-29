@@ -518,7 +518,7 @@ footer p{
 }
 
 .pricing-scroll .pricing-table{
-    min-width:900px;
+
 }
 
 /* =====================
@@ -531,13 +531,13 @@ footer p{
 
 .pricing-table{
     width:100%;
-    min-width:900px;
 
     border-collapse:separate;
     border-spacing:0;
 
     background:#161616;
     border-radius:24px;
+    overflow:hidden;
 }
 
 .pricing-table th,
