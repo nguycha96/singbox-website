@@ -504,9 +504,9 @@ footer p{
 }
 
 .pricing-table{
-    width:auto;
+    width:100%;
+    max-width:1200px;
     min-width:900px;
-    margin:0 auto;
 
     border-collapse:separate;
     border-spacing:0;
