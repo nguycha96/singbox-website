@@ -184,4 +184,28 @@ drawCarousel();
 
 console.log(slides);
 
+    // Swipe tuki puhelimelle
+let startX = 0;
+
+const carousel = document.querySelector(".carousel");
+
+carousel.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+carousel.addEventListener("touchend", (e) => {
+
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (Math.abs(diff) < 40) return;
+
+    if (diff > 0) {
+        next.click();
+    } else {
+        prev.click();
+    }
+
+});
+
 });
