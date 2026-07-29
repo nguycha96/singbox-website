@@ -78,7 +78,9 @@ a{
 }
 
 .nav a{
-    color:#ddd;
+    color:#f2f2f2;
+    font-size:17px;
+    font-weight:500;
     transition:.3s;
 }
 
