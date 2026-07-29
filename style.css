@@ -826,24 +826,31 @@ footer p{
     text-align:center;
 }
 
-.room-info h3,
-.room-info p,
-.room-info .room-price,
-.room-info .room-size{
-    text-align:center;
-}
-
 .room-info h3{
-    font-size:2rem;
-    font-weight:700;
+    font-size:2rem;      /* 32px */
+    font-weight:800;
     margin-bottom:14px;
 }
 
+.room-info .room-size{
+    font-size:1rem;
+    padding:8px 18px;
+    margin-bottom:18px;
+}
+
+.room-info .room-price{
+    font-size:1.6rem;
+    font-weight:800;
+    margin:18px 0;
+}
+
 .room-info p{
-    max-width:600px;
+    font-size:1.15rem;
+    line-height:1.8;
+    max-width:650px;
 }
 
 .room-info .btn{
-    margin-top:24px;
+    margin-top:28px;
 }
 
