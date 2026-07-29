@@ -188,8 +188,6 @@ console.log(slides);
 
 const carousel = document.querySelector(".room-carousel");
 
-    carousel.style.background = "red";
-
 carousel.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
 }, { passive: true });
