@@ -51,7 +51,8 @@ a{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    height:82px;
+    gap:24px;
+    min-height:82px;
 }
 
 .logo{
