@@ -100,7 +100,7 @@ langButtons.forEach(button => {
         document.getElementById("nav-rooms").textContent = translations[lang].rooms;
         document.getElementById("nav-pricing").textContent = translations[lang].pricing;
         document.getElementById("nav-menu").textContent = translations[lang].menu;
-        document.getElementById("menu-title").textContent = "TESTI";
+        document.getElementById("menu-title").textContent = translations[lang].menu;
         document.getElementById("nav-contact").textContent = translations[lang].contact;
         document.getElementById("book-btn").textContent = translations[lang].book;
 
