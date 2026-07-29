@@ -494,7 +494,7 @@ footer p{
 }
 
 .pricing .container{
-    max-width:1200px;
+    background:red;
 }
 
 .pricing-scroll{
