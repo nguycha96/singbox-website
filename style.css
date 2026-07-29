@@ -505,118 +505,70 @@ footer p{
 }
 
 .pricing-table{
-    margin-top:50px;
-    border:1px solid rgba(255,255,255,.08);
+    width:100%;
+    min-width:900px;
+    border-collapse:collapse;
+    background:#161616;
     border-radius:24px;
+    overflow:hidden;
+}
+
+.pricing-table th,
+.pricing-table td{
+    padding:24px 32px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.pricing-table th{
+    background:#8b5cf6;
+    color:#fff;
+    font-weight:700;
+}
+
+.pricing-table td{
+    color:#f5f5f5;
+}
+
+.pricing-table td:first-child,
+.pricing-table th:first-child{
+    text-align:left;
+    font-weight:700;
+}
+
+.pricing-table tbody tr:nth-child(even){
+    background:rgba(255,255,255,.02);
+}
+
+.pricing-table tbody tr:hover{
+    background:rgba(139,92,246,.08);
+}
+
+/* Sticky ensimmäinen sarake */
+
+.pricing-table th:first-child,
+.pricing-table td:first-child{
+    position:sticky;
+    left:0;
+    z-index:3;
+}
+
+.pricing-table th:first-child{
+    background:#8b5cf6;
+    z-index:4;
+}
+
+.pricing-table tbody tr:nth-child(odd) td:first-child{
     background:#161616;
 }
 
-.pricing-header,
-.pricing-row{
-
-    display:grid;
-
-    grid-template-columns:2fr repeat(4,1fr);
-
-   min-width:900px;
-
+.pricing-table tbody tr:nth-child(even) td:first-child{
+    background:#1b1b1b;
 }
 
-.pricing-header{
-
-    display:grid;
-
-    grid-template-columns:2fr repeat(4,1fr);
-
-    background:#8b5cf6;
-
-    color:#fff;
-
-    font-weight:700;
-
-}
-
-.pricing-header div,
-.pricing-row div{
-
-    padding:26px 32px;
-
-}
-
-.pricing-row div:first-child{
-
-    font-weight:700;
-
-    color:#ffffff;
-
-    line-height:1.5;
-
-}
-
-.pricing-row div:not(:first-child){
-
-    font-size:1.08rem;
-
-    font-weight:700;
-
-    color:#f5f5f5;
-
-}
-
-.pricing-row{
-
-    display:grid;
-
-    grid-template-columns:2fr repeat(4,1fr);
-
-    align-items:center;
-
-    border-top:1px solid rgba(255,255,255,.08);
-
-    transition:.3s;
-
-    position:relative;
-
-}
-
-.pricing-row::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    top:0;
-
-    width:4px;
-
-    height:100%;
-
-    background:#8b5cf6;
-
-    opacity:0;
-
-    transition:.3s;
-
-}
-
-.pricing-row:hover::before{
-
-    opacity:1;
-
-}
-
-.pricing-row:hover{
-
-    background:rgba(139,92,246,.08);
-
-}
-
-.pricing-row:nth-child(even){
-
-    background:rgba(255,255,255,.02);
-
+.pricing-table th:first-child,
+.pricing-table td:first-child{
+    box-shadow:8px 0 18px rgba(0,0,0,.35);
 }
 
 .pricing-info{
