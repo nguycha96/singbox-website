@@ -750,7 +750,7 @@ footer p{
     position:absolute;
     left:50%;
     top:50%;
-    width:320px;
+    width:380px;
     transform:translate(-50%,-50%);
     transition:.7s;
     opacity:0;
@@ -764,19 +764,19 @@ footer p{
 
 .card.active{
     opacity:1;
-    transform:translate(-50%,-50%) scale(1);
+    transform:translate(-50%,-50%) scale(1.2);
     z-index:5;
 }
 
 .card.left{
-    opacity:.55;
-    transform:translate(-150%,-50%) scale(.8);
+    opacity:.45;
+    transform:translate(-180%,-50%) scale(.75);
     z-index:3;
 }
 
 .card.right{
-    opacity:.55;
-    transform:translate(50%,-50%) scale(.8);
+    opacity:.45;
+    transform:translate(80%,-50%) scale(.75);
     z-index:3;
 }
 
