@@ -898,6 +898,28 @@ footer p{
     text-align:center;
 }
 
-.room-info .btn{
-    margin-top:24px;
+.room-info h3{
+    font-size:2rem;
+    margin-bottom:12px;
 }
+
+.room-info .room-size{
+    display:inline-block;
+    margin-bottom:18px;
+}
+
+.room-info .room-price{
+    margin-bottom:20px;
+}
+
+.room-info p{
+    max-width:600px;
+    margin:0 auto 30px;
+    color:#bdbdbd;
+    line-height:1.8;
+}
+
+.room-info .btn{
+    display:inline-block;
+}
+
