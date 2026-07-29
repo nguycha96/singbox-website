@@ -891,3 +891,13 @@ footer p{
         font-size:20px;
     }
 }
+
+.room-info{
+    max-width:700px;
+    margin:40px auto 0;
+    text-align:center;
+}
+
+.room-info .btn{
+    margin-top:24px;
+}
