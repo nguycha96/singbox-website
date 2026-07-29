@@ -180,80 +180,8 @@ prev.onclick=()=>{
 
 };
 
-    let startX = 0;
-
-const carousel = document.querySelector(".carousel");
-
-carousel.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-});
-
-carousel.addEventListener("touchend", e => {
-
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-
-    if (Math.abs(diff) < 40) return;
-
-    if (diff > 0) {
-        current = (current + 1) % slides.length;
-    } else {
-        current = (current - 1 + slides.length) % slides.length;
-    }
-
-    drawCarousel();
-
-});
-    
 drawCarousel();
 
-    let startX = 0;
-
-const carousel = document.querySelector(".room-carousel");
-
-carousel.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-});
-
-carousel.addEventListener("touchend", (e) => {
-
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-
-    if (Math.abs(diff) < 40) return;
-
-    if (diff > 0) {
-        next.click();   // pyyhkäisy vasemmalle
-    } else {
-        prev.click();   // pyyhkäisy oikealle
-    }
-
-});
-
 console.log(slides);
-
-    // Swipe tuki puhelimelle
-let startX = 0;
-
-const carousel = document.querySelector(".carousel");
-
-carousel.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-});
-
-carousel.addEventListener("touchend", (e) => {
-
-    let endX = e.changedTouches[0].clientX;
-    let diff = startX - endX;
-
-    if (Math.abs(diff) < 40) return;
-
-    if (diff > 0) {
-        next.click();
-    } else {
-        prev.click();
-    }
-
-});
 
 });
