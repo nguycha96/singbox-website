@@ -738,6 +738,7 @@ footer p{
     justify-content:center;
     align-items:center;
     overflow:visible;
+    touch-action: pan-y;
 }
 
 .carousel{
