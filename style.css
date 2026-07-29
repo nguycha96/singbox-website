@@ -498,6 +498,7 @@ footer p{
 }
 
 .pricing-scroll{
+    border:2px solid red;
     width:100%;
     max-width:1200px;
     margin:0 auto;
