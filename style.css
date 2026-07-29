@@ -838,3 +838,22 @@ footer p{
     max-width:650px;
 }
 
+.room-info{
+    width:100%;
+    max-width:900px;
+    margin:60px auto 0;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.room-info h3,
+.room-info p,
+.room-info .room-price,
+.room-info .room-size{
+    text-align:center;
+}
