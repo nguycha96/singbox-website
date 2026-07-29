@@ -488,7 +488,7 @@ footer p{
 .pricing-scroll{
     width:100%;
     overflow-x:auto;
-    overflow-y:visible;
+    overflow-y:hidden;
     -webkit-overflow-scrolling:touch;
     position:relative;
 }
