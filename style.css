@@ -768,6 +768,7 @@ footer p{
     opacity:1;
     transform:translate(-50%,-50%) scale(1.25);
     z-index:10;
+    filter: drop-shadow(0 0 40px rgba(139,92,246,.55));
 }
 
 .card.active img{
