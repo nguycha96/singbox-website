@@ -493,6 +493,11 @@ footer p{
     padding:100px 0;
 }
 
+.pricing h2,
+.pricing .section-text{
+    text-align:center;
+}
+
 .pricing .container{
     max-width:1200px;
 }
