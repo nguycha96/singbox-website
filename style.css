@@ -760,12 +760,20 @@ footer p{
     width:100%;
     border-radius:28px;
     box-shadow:0 20px 60px rgba(0,0,0,.45);
+    transition:.6s;
 }
 
 .card.active{
     opacity:1;
     transform:translate(-50%,-50%) scale(1.25);
     z-index:10;
+}
+
+.card.active img{
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.55),
+        0 0 30px rgba(139,92,246,.45),
+        0 0 80px rgba(139,92,246,.25);
 }
 
 .card.left{
