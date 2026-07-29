@@ -750,9 +750,9 @@ footer p{
     position:absolute;
     left:50%;
     top:50%;
-    width:380px;
+    width:520px;
     transform:translate(-50%,-50%);
-    transition:.7s;
+    transition:all .7s ease;
     opacity:0;
 }
 
@@ -764,8 +764,8 @@ footer p{
 
 .card.active{
     opacity:1;
-    transform:translate(-50%,-50%) scale(1.2);
-    z-index:5;
+    transform:translate(-50%,-50%) scale(1.25);
+    z-index:10;
 }
 
 .card.left{
