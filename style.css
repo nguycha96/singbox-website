@@ -493,6 +493,10 @@ footer p{
     padding:100px 0;
 }
 
+.pricing .container{
+    max-width:950px;
+}
+
 .pricing-scroll{
     width:100%;
     overflow-x:auto;
