@@ -68,20 +68,22 @@ document.addEventListener("DOMContentLoaded", () => {
 const translations = {
 
     en: {
-        home: "Home",
-        rooms: "Rooms",
-        pricing: "Pricing",
-        contact: "Contact",
-        book: "Book Now"
-    },
+    home: "Home",
+    rooms: "Rooms",
+    pricing: "Pricing",
+    menu: "Bar Menu",
+    contact: "Contact",
+    book: "Book Now"
+},
 
     fi: {
-        home: "Etusivu",
-        rooms: "Huoneet",
-        pricing: "Hinnasto",
-        contact: "Yhteystiedot",
-        book: "Varaa"
-    }
+    home: "Etusivu",
+    rooms: "Huoneet",
+    pricing: "Hinnasto",
+    menu: "Juomavalikko",
+    contact: "Yhteystiedot",
+    book: "Varaa"
+}
 
 };
 
@@ -97,6 +99,7 @@ langButtons.forEach(button => {
         document.getElementById("nav-home").textContent = translations[lang].home;
         document.getElementById("nav-rooms").textContent = translations[lang].rooms;
         document.getElementById("nav-pricing").textContent = translations[lang].pricing;
+        document.getElementById("nav-menu").textContent = translations[lang].menu;
         document.getElementById("nav-contact").textContent = translations[lang].contact;
         document.getElementById("book-btn").textContent = translations[lang].book;
 
