@@ -499,6 +499,9 @@ footer p{
 
 .pricing-scroll{
     width:100%;
+    max-width:1200px;
+    margin:0 auto;
+
     overflow-x:auto;
     -webkit-overflow-scrolling:touch;
 }
