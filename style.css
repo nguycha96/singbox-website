@@ -858,8 +858,17 @@ footer p{
     }
 
     .card.active{
-        transform:translate(-50%,-50%) scale(1);
-    }
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.card.active::after{
+    width:65%;
+    height:45px;
+    bottom:-30px;
+    background:rgba(139,92,246,.55);
+    filter:blur(35px);
+    z-index:-1;
+}
 
     .card.left{
         transform:translate(-120%,-50%) scale(.7);
