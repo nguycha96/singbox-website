@@ -99,6 +99,7 @@ langButtons.forEach(button => {
         document.getElementById("nav-home").textContent = translations[lang].home;
         document.getElementById("nav-rooms").textContent = translations[lang].rooms;
         document.getElementById("nav-pricing").textContent = translations[lang].pricing;
+        document.getElementById("pricing-title").textContent = translations[lang].pricing;
         document.getElementById("nav-menu").textContent = translations[lang].menu;
         document.getElementById("menu-title").textContent = translations[lang].menu;
         document.getElementById("nav-contact").textContent = translations[lang].contact;
