@@ -10,7 +10,6 @@
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:90px;
 }
 
 body{
@@ -288,6 +287,10 @@ a{
 .gallery,
 .contact{
     padding:120px 0;
+}
+
+.rooms{
+    scroll-margin-top:90px;
 }
 
 .rooms h2,
