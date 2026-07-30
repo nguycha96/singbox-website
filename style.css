@@ -669,7 +669,7 @@ footer p{
     height:520px;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     overflow:visible;
     touch-action: pan-y;
 }
