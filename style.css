@@ -818,6 +818,15 @@ footer p{
         height:42px;
         font-size:20px;
     }
+
+   .rooms h2{
+    font-size:2.5rem;
+}
+
+.section-text{
+    margin-bottom:30px;
+}
+   
 }
 
 .room-info h3{
