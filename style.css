@@ -830,13 +830,13 @@ footer p{
 }
 
 .room-info h3{
-    font-size:1.5rem;
+    font-size:1.35rem;
     font-weight:800;
     margin-bottom:6px;
 }
 
 .room-info .room-size{
-    font-size:1rem;
+    font-size:0.9rem;
     padding:6px 16px;
     margin:8px 0 12px;
 }
