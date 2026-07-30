@@ -112,26 +112,26 @@ langButtons.forEach(button => {
 const rooms = [
 {
     title:"Gangnam Lounge",
-    size:"Up to 6 Persons",
-    price:"Starting from €40/hour",
+    size:"👥 1–6 Guests",
+    price:"From €40 / hour",
     text:"Luxury lounge with premium interiors and elegant golden lighting."
 },
 {
     title:"Seoul Lounge",
-    size:"Up to 6 Persons",
-    price:"Starting from €40/hour",
+    size:"👥 1–6 Guests",
+    price:"From €40 / hour",
     text:"Elegant pink lounge with a modern Korean luxury atmosphere."
 },
 {
     title:"Hongdae Neon",
-    size:"Up to 4 Persons",
-    price:"Starting from €30/hour",
+    size:"👥 1–4 Guests",
+    price:"From €30 / hour",
     text:"Vibrant purple neon room inspired by Hongdae nightlife."
 },
 {
     title:"Itaewon Gold",
-    size:"Up to 4 Persons",
-    price:"Starting from €30/hour",
+    size:"👥 1–4 Guests",
+    price:"From €30 / hour",
     text:"Intimate luxury room with warm golden tones and premium finishes."
 }
 ];
