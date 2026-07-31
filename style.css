@@ -859,6 +859,27 @@ footer p{
     margin-bottom:10px;
     line-height:1.5;
 }
+
+   .header .btn{
+    padding:12px 28px;
+    font-size:1rem;
+}
+
+   .lang-switch{
+    gap:12px;
+}
+
+.lang-btn{
+    width:56px;
+    height:56px;
+    font-size:1rem;
+}
+
+   .room-info .room-size{
+    font-size:0.82rem;
+    padding:5px 14px;
+    margin:4px 0 6px;
+}
    
 }
 
