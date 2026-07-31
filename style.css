@@ -830,6 +830,35 @@ footer p{
 .section-text{
     margin-bottom:30px;
 }
+
+   .room-info .btn{
+    padding:10px 24px;
+    font-size:0.9rem;
+    margin-top:6px;
+}
+
+   .room-info{
+    margin:12px auto 0;
+}
+
+.room-info h3{
+    font-size:1.35rem;
+    margin-bottom:4px;
+}
+
+.room-info .room-size{
+    font-size:.9rem;
+    margin:6px 0 8px;
+}
+
+.room-info .room-price{
+    margin:8px 0;
+}
+
+.room-info p{
+    margin-bottom:10px;
+    line-height:1.5;
+}
    
 }
 
