@@ -880,6 +880,24 @@ footer p{
     padding:5px 14px;
     margin:4px 0 6px;
 }
+
+   .carousel-arrow{
+    width:36px;
+    height:36px;
+    font-size:18px;
+}
+
+   .room-info .btn{
+    padding:12px 28px;
+    border-radius:18px;
+    font-size:1rem;
+}
+
+   .header .btn{
+    padding:10px 24px;
+    border-radius:18px;
+    font-size:.95rem;
+}
    
 }
 
