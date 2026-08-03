@@ -477,6 +477,17 @@ footer p{
         font-size:18px;
     }
 
+   .contact-card p{
+    display:flex;
+    align-items:flex-start;
+}
+
+.contact-card .day{
+    width:95px;
+    flex-shrink:0;
+    font-weight:600;
+}
+
     .rooms h2,
 .pricing h2,
 .gallery h2,
