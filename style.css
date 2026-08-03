@@ -966,3 +966,39 @@ footer p{
 .room-info .room-size{
     text-align:center;
 }
+
+/* =====================
+   LIGHTBOX
+===================== */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    padding:40px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:85%;
+    border-radius:22px;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+.close-lightbox{
+    position:absolute;
+    top:22px;
+    right:28px;
+    font-size:42px;
+    color:#fff;
+    cursor:pointer;
+    user-select:none;
+}
