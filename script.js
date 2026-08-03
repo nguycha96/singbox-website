@@ -167,6 +167,22 @@ function drawCarousel(){
     size.textContent = rooms[current].size;
     price.textContent = rooms[current].price;
     text.textContent = rooms[current].text;
+
+    const lightboxTitle = document.getElementById("lightboxTitle");
+const lightboxGuests = document.getElementById("lightboxGuests");
+const lightboxPrice = document.getElementById("lightboxPrice");
+const lightboxText = document.getElementById("lightboxText");
+
+if(lightbox.classList.contains("active")){
+
+    lightboxImg.src = slides[current].querySelector("img").src;
+
+    lightboxTitle.textContent = rooms[current].title;
+    lightboxGuests.textContent = rooms[current].size;
+    lightboxPrice.textContent = rooms[current].price;
+    lightboxText.textContent = rooms[current].text;
+
+}
 }
     
 next.onclick=()=>{
@@ -232,3 +248,22 @@ document.querySelectorAll(".carousel .card img").forEach(img => {
 closeLightbox.addEventListener("click", () => {
     lightbox.classList.remove("active");
 });
+
+const lightPrev = document.querySelector(".lightbox-arrow.left");
+const lightNext = document.querySelector(".lightbox-arrow.right");
+
+lightNext.onclick = () => {
+
+    current = (current + 1) % rooms.length;
+
+    drawCarousel();
+
+};
+
+lightPrev.onclick = () => {
+
+    current = (current - 1 + rooms.length) % rooms.length;
+
+    drawCarousel();
+
+};
