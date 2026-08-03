@@ -61,13 +61,13 @@ a{
 }
 
 .logo h1{
-    font-size:30px;
+    font-size:27px;
     letter-spacing:3px;
     font-weight:800;
 }
 
 .logo span{
-    font-size:12px;
+    font-size:11px;
     letter-spacing:5px;
     color:#d28cff;
 }
@@ -452,11 +452,11 @@ footer p{
 @media (max-width:900px){
 
     .header .container{
-        flex-direction:column;
-        height:auto;
-        padding:20px 0;
-        gap:18px;
-    }
+    flex-direction:column;
+    height:auto;
+    padding:14px 0;
+    gap:12px;
+}
 
     .nav{
         flex-wrap:wrap;
