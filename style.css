@@ -294,17 +294,12 @@ a{
 }
 
 .rooms h2,
+.pricing h2,
 .gallery h2,
+.menu h2,
 .contact h2{
     text-align:center;
     font-size:48px;
-    margin-bottom:18px;
-}
-
-.pricing h2,
-.rooms h2{
-    font-size:42px;
-    text-align:center;
     margin-bottom:18px;
 }
 
@@ -493,8 +488,9 @@ footer p{
 .gallery h2,
 .menu h2,
 .contact h2{
-    font-size:34px;
+    font-size:28px;
     line-height:1.15;
+    margin-bottom:12px;
 }
 
 }
