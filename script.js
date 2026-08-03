@@ -215,3 +215,20 @@ carousel.addEventListener("touchend", (e) => {
 }, { passive: true });
 
 });
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const closeLightbox = document.querySelector(".close-lightbox");
+
+document.querySelectorAll(".carousel .card img").forEach(img => {
+
+    img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add("active");
+    });
+
+});
+
+closeLightbox.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+});
