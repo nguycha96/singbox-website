@@ -469,10 +469,13 @@ footer p{
     }
 
     .rooms h2,
-    .gallery h2,
-    .contact h2{
-        font-size:36px;
-    }
+.pricing h2,
+.gallery h2,
+.menu h2,
+.contact h2{
+    font-size:34px;
+    line-height:1.15;
+}
 
 }
 .showcase{
