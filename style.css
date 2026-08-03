@@ -483,6 +483,22 @@ footer p{
     font-weight:600;
 }
 
+   .lightbox-content{
+    flex-direction:column;
+    gap:24px;
+}
+
+.lightbox-info{
+    max-width:100%;
+    text-align:center;
+}
+
+.lightbox-arrow{
+    width:44px;
+    height:44px;
+    font-size:22px;
+}
+
     .rooms h2,
 .pricing h2,
 .gallery h2,
@@ -1009,4 +1025,55 @@ footer p{
     color:#fff;
     cursor:pointer;
     user-select:none;
+}
+
+.lightbox-content{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    max-width:1200px;
+    width:100%;
+}
+
+.lightbox-info{
+    max-width:360px;
+    color:#fff;
+}
+
+.lightbox-info h3{
+    font-size:2rem;
+    margin-bottom:14px;
+}
+
+.lightbox-info p{
+    color:#ddd;
+    line-height:1.7;
+    margin-top:18px;
+}
+
+.lightbox-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:54px;
+    height:54px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    font-size:26px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.lightbox-arrow:hover{
+    background:#8b5cf6;
+}
+
+.lightbox-arrow.left{
+    left:30px;
+}
+
+.lightbox-arrow.right{
+    right:30px;
 }
