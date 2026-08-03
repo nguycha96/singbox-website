@@ -384,6 +384,15 @@ a{
 .contact-card p{
     color:#bdbdbd;
     line-height:1.7;
+    display:flex;
+    margin-bottom:8px;
+}
+
+.contact-card .day{
+    display:inline-block;
+    width:100px;
+    font-weight:600;
+    flex-shrink:0;
 }
 
 .room-btn{
