@@ -203,6 +203,25 @@ prev.onclick=()=>{
 
 drawCarousel();
 
+    /* ===== LIGHTBOX ===== */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+const lightboxTitle = document.getElementById("lightboxTitle");
+const lightboxGuests = document.getElementById("lightboxGuests");
+const lightboxPrice = document.getElementById("lightboxPrice");
+const lightboxText = document.getElementById("lightboxText");
+
+const closeLightbox =
+document.querySelector(".close-lightbox");
+
+const lightPrev =
+document.querySelector(".lightbox-arrow.left");
+
+const lightNext =
+document.querySelector(".lightbox-arrow.right");
+
 console.log(slides);
 
     let startX = 0;
@@ -236,13 +255,11 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const closeLightbox = document.querySelector(".close-lightbox");
 
-document.querySelectorAll(".carousel .card img").forEach((img,index) => {
+document.querySelectorAll(".carousel .card img").forEach(img => {
 
     img.addEventListener("click", () => {
 
-        current = index;
-
-        drawCarousel();
+        lightboxImg.src = img.src;
 
         lightbox.classList.add("active");
 
