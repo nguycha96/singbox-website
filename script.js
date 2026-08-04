@@ -236,11 +236,16 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const closeLightbox = document.querySelector(".close-lightbox");
 
-document.querySelectorAll(".carousel .card img").forEach(img => {
+document.querySelectorAll(".carousel .card img").forEach((img,index) => {
 
     img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
+
+        current = index;
+
+        drawCarousel();
+
         lightbox.classList.add("active");
+
     });
 
 });
@@ -249,21 +254,18 @@ closeLightbox.addEventListener("click", () => {
     lightbox.classList.remove("active");
 });
 
-const lightPrev = document.querySelector(".lightbox-arrow.left");
-const lightNext = document.querySelector(".lightbox-arrow.right");
+lightNext.addEventListener("click", () => {
 
-lightNext.onclick = () => {
-
-    current = (current + 1) % rooms.length;
+    current = (current + 1) % slides.length;
 
     drawCarousel();
 
-};
+});
 
-lightPrev.onclick = () => {
+lightPrev.addEventListener("click", () => {
 
-    current = (current - 1 + rooms.length) % rooms.length;
+    current = (current - 1 + slides.length) % slides.length;
 
     drawCarousel();
 
-};
+});
