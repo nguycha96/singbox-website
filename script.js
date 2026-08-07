@@ -228,9 +228,9 @@ document.querySelector(".lightbox-arrow.right");
 
         current = index;
 
-        drawCarousel();
+lightbox.classList.add("active");
 
-        lightbox.classList.add("active");
+drawCarousel();
 
     });
 
