@@ -222,6 +222,42 @@ document.querySelector(".lightbox-arrow.left");
 const lightNext =
 document.querySelector(".lightbox-arrow.right");
 
+    document.querySelectorAll(".carousel .card img").forEach((img,index)=>{
+
+    img.addEventListener("click",()=>{
+
+        current = index;
+
+        drawCarousel();
+
+        lightbox.classList.add("active");
+
+    });
+
+});
+
+closeLightbox.addEventListener("click",()=>{
+
+    lightbox.classList.remove("active");
+
+});
+
+lightNext.addEventListener("click",()=>{
+
+    current = (current + 1) % slides.length;
+
+    drawCarousel();
+
+});
+
+lightPrev.addEventListener("click",()=>{
+
+    current = (current - 1 + slides.length) % slides.length;
+
+    drawCarousel();
+
+});
+
 console.log(slides);
 
     let startX = 0;
@@ -251,38 +287,4 @@ carousel.addEventListener("touchend", (e) => {
 
 });
 
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-const closeLightbox = document.querySelector(".close-lightbox");
 
-document.querySelectorAll(".carousel .card img").forEach(img => {
-
-    img.addEventListener("click", () => {
-
-        lightboxImg.src = img.src;
-
-        lightbox.classList.add("active");
-
-    });
-
-});
-
-closeLightbox.addEventListener("click", () => {
-    lightbox.classList.remove("active");
-});
-
-lightNext.addEventListener("click", () => {
-
-    current = (current + 1) % slides.length;
-
-    drawCarousel();
-
-});
-
-lightPrev.addEventListener("click", () => {
-
-    current = (current - 1 + slides.length) % slides.length;
-
-    drawCarousel();
-
-});
