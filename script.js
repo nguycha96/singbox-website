@@ -143,6 +143,14 @@ const size = document.getElementById("roomSize");
 const price = document.getElementById("roomPrice");
 const text = document.getElementById("roomText");
 
+    const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+const lightboxTitle = document.getElementById("lightboxTitle");
+const lightboxGuests = document.getElementById("lightboxGuests");
+const lightboxPrice = document.getElementById("lightboxPrice");
+const lightboxText = document.getElementById("lightboxText");
+
 const prev = document.querySelector(".carousel-arrow.left");
 const next = document.querySelector(".carousel-arrow.right");
 
@@ -204,14 +212,6 @@ prev.onclick=()=>{
 drawCarousel();
 
     /* ===== LIGHTBOX ===== */
-
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-
-const lightboxTitle = document.getElementById("lightboxTitle");
-const lightboxGuests = document.getElementById("lightboxGuests");
-const lightboxPrice = document.getElementById("lightboxPrice");
-const lightboxText = document.getElementById("lightboxText");
 
 const closeLightbox =
 document.querySelector(".close-lightbox");
