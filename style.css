@@ -1307,3 +1307,64 @@ footer p{
     }
 
 }
+
+/* =====================
+   OPENING BRAND
+===================== */
+
+.opening-brand{
+    position:relative;
+    z-index:5;
+    text-align:center;
+    opacity:0;
+    transform:scale(.92);
+    animation:openingBrand 2s ease forwards;
+}
+
+.opening-brand-title{
+    color:#fff;
+    font-size:clamp(2.5rem,7vw,5rem);
+    font-weight:800;
+    letter-spacing:.18em;
+    text-shadow:
+        0 0 10px rgba(255,255,255,.5),
+        0 0 28px rgba(139,92,246,.65),
+        0 0 55px rgba(212,175,55,.3);
+}
+
+.opening-brand-subtitle{
+    margin-top:8px;
+    color:#d4af37;
+    font-size:clamp(.75rem,1.8vw,1rem);
+    font-weight:600;
+    letter-spacing:.55em;
+    text-shadow:
+        0 0 12px rgba(212,175,55,.55);
+}
+
+@keyframes openingBrand{
+
+    0%{
+        opacity:0;
+        transform:scale(.88);
+        filter:blur(8px);
+    }
+
+    30%{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+
+    72%{
+        opacity:1;
+        transform:scale(1.02);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.05);
+        filter:blur(3px);
+    }
+
+}
