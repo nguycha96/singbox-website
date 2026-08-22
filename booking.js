@@ -344,7 +344,7 @@ function createTimeSlots(){
     */
 
     const latestStart =
-        closingMinutes - 60;
+        closingMinutes - 15;
 
     for(
         let minutes = openingMinutes;
