@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Book Your Room | SING BOX</title>
+
+    <link rel="stylesheet" href="booking.css">
+</head>
+
+<body>
+
+    <main class="booking-page">
+
+        <header class="booking-header">
+            <a href="index.html" class="back-link">
+                ← Back to SING BOX
+            </a>
+
+            <h1>Book Your Room</h1>
+
+            <p>
+                Choose your date and find your perfect
+                karaoke room.
+            </p>
+        </header>
+
+
+        <section class="booking-calendar-section">
+
+            <div class="calendar-header">
+
+                <button
+                    type="button"
+                    id="previousMonth"
+                    class="month-arrow"
+                >
+                    ‹
+                </button>
+
+                <h2 id="monthTitle"></h2>
+
+                <button
+                    type="button"
+                    id="nextMonth"
+                    class="month-arrow"
+                >
+                    ›
+                </button>
+
+            </div>
+
+
+            <div class="calendar-layout">
+
+                <div class="calendar" id="calendar">
+
+                    <div class="calendar-weekdays">
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Sun</span>
+                    </div>
+
+                    <div
+                        class="calendar-days"
+                        id="calendarDays"
+                    ></div>
+
+                </div>
+
+
+                <aside class="calendar-legend">
+
+                    <h3>Availability</h3>
+
+                    <div class="legend-item">
+                        <span class="legend-box available"></span>
+                        <span>Available</span>
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="legend-box selected"></span>
+                        <span>Selected</span>
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="legend-box booked">×</span>
+                        <span>Booked</span>
+                    </div>
+
+                    <p>
+                        Select a date to see available
+                        rooms and times.
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="rooms-section"
+            id="roomsSection"
+        >
+
+            <div class="rooms-heading">
+
+                <h2 id="selectedDateTitle">
+                    Select a date
+                </h2>
+
+                <p>
+                    Choose a one-hour booking.
+                    Each booking includes a minimum
+                    15-minute cleaning period.
+                </p>
+
+            </div>
+
+
+            <div
+                class="rooms-grid"
+                id="roomsGrid"
+            >
+
+                <!-- Rooms will be generated here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="booking.js"></script>
+
+</body>
+</html>
