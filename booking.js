@@ -297,49 +297,126 @@ function createTimeSlots(){
 
     const slots = [];
 
+    if(!selectedDate){
+        return slots;
+    }
+
 
     /*
-       Example opening hours:
-       12:00–23:00
-
-       We create 15-minute
-       possible start times.
+       JavaScript:
+       Sunday = 0
+       Monday = 1
+       Tuesday = 2
+       ...
+       Saturday = 6
     */
 
-    const openingHour = 12;
+    const day =
+        selectedDate.getDay();
 
-    const closingHour = 23;
 
+    const openingMinutes =
+        14 * 60;
+
+
+    let closingMinutes;
+
+
+    /*
+       Monday–Thursday
+       14:00–23:00
+    */
+
+    if(day >= 1 && day <= 4){
+
+        closingMinutes =
+            23 * 60;
+
+    }
+
+
+    /*
+       Friday–Sunday
+       14:00–02:00
+
+       02:00 belongs to the
+       following calendar day,
+       so we use 26:00 internally.
+    */
+
+    else{
+
+        closingMinutes =
+            26 * 60;
+
+    }
+
+
+    /*
+       Leave 1 hour for the booking
+       AND 15 minutes for cleaning.
+
+       Therefore the latest possible
+       booking start is:
+
+       closing time - 1h 15min
+    */
+
+    const latestStart =
+        closingMinutes - 75;
+
+
+    /*
+       Create 15-minute start times.
+    */
 
     for(
-        let minutes = openingHour * 60;
-        minutes < closingHour * 60;
+        let minutes = openingMinutes;
+        minutes <= latestStart;
         minutes += 15
     ){
 
+        let displayMinutes =
+            minutes;
+
+
+        /*
+           After midnight, convert
+           24:00 → 00:00
+           24:15 → 00:15
+           etc.
+        */
+
+        if(displayMinutes >= 24 * 60){
+
+            displayMinutes -= 24 * 60;
+
+        }
+
+
         const hours =
-            Math.floor(minutes / 60);
+            Math.floor(displayMinutes / 60);
 
         const mins =
-            minutes % 60;
+            displayMinutes % 60;
 
 
         const hourText =
-            String(hours).padStart(2, "0");
+            String(hours).padStart(2,"0");
 
         const minuteText =
-            String(mins).padStart(2, "0");
+            String(mins).padStart(2,"0");
 
 
         slots.push(
             `${hourText}:${minuteText}`
         );
+
     }
 
 
     return slots;
 }
-
 
 /* =====================
    DEMO BOOKED TIMES
