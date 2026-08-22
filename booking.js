@@ -590,69 +590,232 @@ function drawRooms(){
 
 function selectTime(room, time, button){
 
-    document
-        .querySelectorAll(".time-slot.selected")
-        .forEach(slot => {
-            slot.classList.remove("selected");
-        });
-
-    const [hours, minutes] = time
-        .split(":")
-        .map(Number);
-
-    const startMinutes =
-        hours * 60 + minutes;
-
-    const endMinutes =
-        startMinutes + 60;
+    const roomCard =
+        button.closest(".room-card");
 
     const timeButtons =
-        button
-            .closest(".room-card")
-            .querySelectorAll(".time-slot");
+        roomCard.querySelectorAll(".time-slot");
 
-    timeButtons.forEach(slot => {
 
-        const slotTime =
+    const [hours, minutes] =
+        time.split(":").map(Number);
+
+    const clickedMinutes =
+        hours * 60 + minutes;
+
+
+    /*
+       Tarkistetaan, onko tällä huoneella
+       jo valittu tunti.
+    */
+
+    const selectedButtons =
+        roomCard.querySelectorAll(
+            ".time-slot.selected"
+        );
+
+
+    /*
+       Jos mitään ei ole vielä valittu,
+       aloitetaan uusi yhden tunnin varaus.
+    */
+
+    if(selectedButtons.length === 0){
+
+        selectOneHour(
+            roomCard,
+            clickedMinutes
+        );
+
+        return;
+    }
+
+
+    /*
+       Selvitetään nykyisen valinnan
+       ensimmäinen ja viimeinen vartti.
+    */
+
+    let selectedTimes = [];
+
+    selectedButtons.forEach(slot => {
+
+        const value =
             slot.dataset.time;
 
-        if(!slotTime){
+        if(!value){
             return;
         }
 
-        const [slotHours, slotMinutes] =
-            slotTime
-                .split(":")
-                .map(Number);
+        const [h,m] =
+            value.split(":").map(Number);
 
-        const slotStart =
-            slotHours * 60 + slotMinutes;
-
-        if(
-            slotStart >= startMinutes &&
-            slotStart < endMinutes
-        ){
-
-            slot.classList.add("selected");
-
-        }
+        selectedTimes.push(
+            h * 60 + m
+        );
 
     });
 
-    console.log(
-        "Selected booking:",
-        {
-            date: selectedDate,
-            room: room.title,
-            start: time,
-            end:
-                `${String(Math.floor(endMinutes / 60))
-                    .padStart(2, "0")}:${String(endMinutes % 60)
-                    .padStart(2, "0")}`
+
+    const firstSelected =
+        Math.min(...selectedTimes);
+
+    const lastSelected =
+        Math.max(...selectedTimes);
+
+
+    /*
+       Jos klikataan heti nykyisen varauksen
+       perään tulevaa varttia, lisätään
+       yksi tunti.
+       
+       Esimerkiksi:
+       
+       14:00–15:00
+       klikataan 15:00
+       ↓
+       14:00–16:00
+    */
+
+    if(clickedMinutes === lastSelected + 15){
+
+        const newEnd =
+            lastSelected + 75;
+
+        for(
+            let minutes = lastSelected + 15;
+            minutes < newEnd;
+            minutes += 15
+        ){
+
+            const slot =
+                findTimeButton(
+                    timeButtons,
+                    minutes
+                );
+
+            if(!slot){
+                return;
+            }
+
+            slot.classList.add("selected");
         }
+
+        return;
+    }
+
+
+    /*
+       Jos klikataan heti ennen nykyistä
+       varausta, lisätään tunti alkuun.
+       
+       Esimerkiksi:
+       
+       15:00–16:00
+       klikataan 14:00
+       ↓
+       14:00–16:00
+    */
+
+    if(clickedMinutes === firstSelected - 15){
+
+        const newStart =
+            firstSelected - 60;
+
+        for(
+            let minutes = newStart;
+            minutes < firstSelected;
+            minutes += 15
+        ){
+
+            const slot =
+                findTimeButton(
+                    timeButtons,
+                    minutes
+                );
+
+            if(!slot){
+                return;
+            }
+
+            slot.classList.add("selected");
+        }
+
+        return;
+    }
+
+
+    /*
+       Jos klikataan jotakin muuta kohtaa,
+       aloitetaan uusi yhden tunnin valinta.
+    */
+
+    timeButtons.forEach(slot => {
+
+        slot.classList.remove("selected");
+
+    });
+
+
+    selectOneHour(
+        roomCard,
+        clickedMinutes
     );
 }
 
+function selectOneHour(
+    roomCard,
+    startMinutes
+){
+
+    const timeButtons =
+        roomCard.querySelectorAll(
+            ".time-slot"
+        );
+
+
+    for(
+        let minutes = startMinutes;
+        minutes < startMinutes + 60;
+        minutes += 15
+    ){
+
+        const slot =
+            findTimeButton(
+                timeButtons,
+                minutes
+            );
+
+        if(!slot){
+            return;
+        }
+
+        slot.classList.add("selected");
+    }
+}
+
+
+function findTimeButton(
+    buttons,
+    minutes
+){
+
+    const hours =
+        Math.floor(minutes / 60);
+
+    const mins =
+        minutes % 60;
+
+
+    const time =
+        `${String(hours).padStart(2,"0")}:${String(mins).padStart(2,"0")}`;
+
+
+    return Array.from(buttons)
+        .find(button =>
+            button.dataset.time === time
+        );
+}
 
 /* =====================
    INITIAL DRAW
