@@ -534,6 +534,9 @@ function drawRooms(){
             button.textContent =
                 time;
 
+           button.dataset.time =
+              time;
+
 
             /*
                Temporary booked state
@@ -585,43 +588,69 @@ function drawRooms(){
    SELECT TIME
 ===================== */
 
-function selectTime(
-    room,
-    time,
-    button
-){
-
-    /*
-       Remove previous selection
-       from every time slot.
-    */
+function selectTime(room, time, button){
 
     document
         .querySelectorAll(".time-slot.selected")
         .forEach(slot => {
-
             slot.classList.remove("selected");
-
         });
 
+    const [hours, minutes] = time
+        .split(":")
+        .map(Number);
 
-    button.classList.add("selected");
+    const startMinutes =
+        hours * 60 + minutes;
 
+    const endMinutes =
+        startMinutes + 60;
+
+    const timeButtons =
+        button
+            .closest(".room-card")
+            .querySelectorAll(".time-slot");
+
+    timeButtons.forEach(slot => {
+
+        const slotTime =
+            slot.dataset.time;
+
+        if(!slotTime){
+            return;
+        }
+
+        const [slotHours, slotMinutes] =
+            slotTime
+                .split(":")
+                .map(Number);
+
+        const slotStart =
+            slotHours * 60 + slotMinutes;
+
+        if(
+            slotStart >= startMinutes &&
+            slotStart < endMinutes
+        ){
+
+            slot.classList.add("selected");
+
+        }
+
+    });
 
     console.log(
         "Selected booking:",
         {
             date: selectedDate,
             room: room.title,
-            time: time
+            start: time,
+            end:
+                `${String(Math.floor(endMinutes / 60))
+                    .padStart(2, "0")}:${String(endMinutes % 60)
+                    .padStart(2, "0")}`
         }
     );
-
-
-    /*
-       The real booking confirmation
-       will be added later.
-    */
 }
 
 
