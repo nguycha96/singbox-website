@@ -301,26 +301,13 @@ function createTimeSlots(){
         return slots;
     }
 
-
-    /*
-       JavaScript:
-       Sunday = 0
-       Monday = 1
-       Tuesday = 2
-       ...
-       Saturday = 6
-    */
-
     const day =
         selectedDate.getDay();
-
 
     const openingMinutes =
         14 * 60;
 
-
     let closingMinutes;
-
 
     /*
        Monday–Thursday
@@ -334,14 +321,9 @@ function createTimeSlots(){
 
     }
 
-
     /*
        Friday–Sunday
        14:00–02:00
-
-       02:00 belongs to the
-       following calendar day,
-       so we use 26:00 internally.
     */
 
     else{
@@ -351,24 +333,18 @@ function createTimeSlots(){
 
     }
 
-
     /*
-       Leave 1 hour for the booking
-       AND 15 minutes for cleaning.
+       One-hour booking.
 
-       Therefore the latest possible
-       booking start is:
+       The last possible starting time is
+       exactly one hour before closing.
 
-       closing time - 1h 15min
+       No extra cleaning time is deducted
+       at the end of the opening hours.
     */
 
     const latestStart =
-        closingMinutes - 75;
-
-
-    /*
-       Create 15-minute start times.
-    */
+        closingMinutes - 60;
 
     for(
         let minutes = openingMinutes;
@@ -379,12 +355,12 @@ function createTimeSlots(){
         let displayMinutes =
             minutes;
 
-
         /*
-           After midnight, convert
+           Convert times after midnight:
+
            24:00 → 00:00
            24:15 → 00:15
-           etc.
+           01:00 → 01:00
         */
 
         if(displayMinutes >= 24 * 60){
@@ -393,27 +369,22 @@ function createTimeSlots(){
 
         }
 
-
         const hours =
             Math.floor(displayMinutes / 60);
 
         const mins =
             displayMinutes % 60;
 
-
         const hourText =
-            String(hours).padStart(2,"0");
+            String(hours).padStart(2, "0");
 
         const minuteText =
-            String(mins).padStart(2,"0");
-
+            String(mins).padStart(2, "0");
 
         slots.push(
             `${hourText}:${minuteText}`
         );
-
     }
-
 
     return slots;
 }
