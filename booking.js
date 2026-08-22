@@ -8,28 +8,28 @@ const rooms = [
         title: "Gangnam Lounge",
         size: "👥 1–6 Guests",
         price: "From €40 / hour",
-        image: "images/gangnam-lounge.jpg"
+        image: "images/gangnam.jpg"
     },
     {
         id: "seoul",
         title: "Seoul Lounge",
         size: "👥 1–6 Guests",
         price: "From €40 / hour",
-        image: "images/seoul-lounge.jpg"
+        image: "images/seoul.jpg"
     },
     {
         id: "hongdae",
         title: "Hongdae Neon",
         size: "👥 1–4 Guests",
         price: "From €30 / hour",
-        image: "images/hongdae-neon.jpg"
+        image: "images/hongdae.jpg"
     },
     {
         id: "itaewon",
         title: "Itaewon Gold",
         size: "👥 1–4 Guests",
         price: "From €30 / hour",
-        image: "images/itaewon-gold.jpg"
+        image: "images/itaewon.jpg"
     }
 ];
 
