@@ -2,6 +2,38 @@
    BOOKING DATA
 ===================== */
 
+const roomPrices = {
+
+    gangnam: {
+        weekdayBefore18: 40,
+        weekdayAfter18: 45,
+        weekendBefore18: 50,
+        weekendAfter18: 55
+    },
+
+    seoul: {
+        weekdayBefore18: 40,
+        weekdayAfter18: 45,
+        weekendBefore18: 50,
+        weekendAfter18: 55
+    },
+
+    hongdae: {
+        weekdayBefore18: 30,
+        weekdayAfter18: 35,
+        weekendBefore18: 40,
+        weekendAfter18: 45
+    },
+
+    itaewon: {
+        weekdayBefore18: 30,
+        weekdayAfter18: 35,
+        weekendBefore18: 40,
+        weekendAfter18: 45
+    }
+
+};
+
 const rooms = [
     {
         id: "gangnam",
@@ -389,6 +421,60 @@ function createTimeSlots(){
     return slots;
 }
 
+function getHourlyPrice(roomId, date, startTime){
+
+    const prices =
+        roomPrices[roomId];
+
+    if(!prices){
+        return 0;
+    }
+
+
+    const [hours] =
+        startTime
+            .split(":")
+            .map(Number);
+
+
+    const day =
+        date.getDay();
+
+
+    /*
+       Friday, Saturday and Sunday
+       use weekend pricing.
+    */
+
+    const isWeekend =
+        day === 5 ||
+        day === 6 ||
+        day === 0;
+
+
+    /*
+       The hour's starting time
+       determines the price.
+    */
+
+    const isBefore18 =
+        hours < 18;
+
+
+    if(isWeekend){
+
+        return isBefore18
+            ? prices.weekendBefore18
+            : prices.weekendAfter18;
+
+    }
+
+
+    return isBefore18
+        ? prices.weekdayBefore18
+        : prices.weekdayAfter18;
+}
+
 /* =====================
    DEMO BOOKED TIMES
 ===================== */
@@ -525,6 +611,9 @@ function drawRooms(){
         card.className =
             "room-card";
 
+        card.dataset.roomId =
+            room.id;
+
 
         card.innerHTML = `
 
@@ -550,9 +639,17 @@ function drawRooms(){
 
             <div class="time-slots">
 
-                <h4>
-                    Available times
-                </h4>
+                <div class="time-header">
+
+                    <h4>
+                        Available times
+                    </h4>
+
+                    <div class="selected-total">
+                        Total €0
+                    </div>
+
+                </div>
 
                 <div class="time-grid"></div>
 
@@ -562,6 +659,10 @@ function drawRooms(){
 
         const timeGrid =
             card.querySelector(".time-grid");
+
+
+        const totalDisplay =
+            card.querySelector(".selected-total");
 
 
         const slots =
@@ -582,8 +683,33 @@ function drawRooms(){
             button.textContent =
                 time;
 
-           button.dataset.time =
-              time;
+
+            button.dataset.time =
+                time;
+
+
+            /*
+               Show the hourly price only
+               on the first quarter of each hour.
+            */
+
+            if(time.endsWith(":00")){
+
+                const price =
+                    getHourlyPrice(
+                        room.id,
+                        selectedDate,
+                        time
+                    );
+
+                button.innerHTML = `
+                    <span>${time}</span>
+                    <small>€${price}</small>
+                `;
+
+                button.dataset.price =
+                    price;
+            }
 
 
             /*
@@ -617,6 +743,11 @@ function drawRooms(){
                             button
                         );
 
+
+                        updateRoomTotal(
+                            room.id
+                        );
+
                     }
                 );
             }
@@ -631,6 +762,56 @@ function drawRooms(){
     });
 }
 
+function updateRoomTotal(roomId){
+
+    const card =
+        document.querySelector(
+            `.room-card[data-room-id="${roomId}"]`
+        );
+
+
+    if(!card){
+        return;
+    }
+
+
+    const selectedButtons =
+        card.querySelectorAll(
+            ".time-slot.selected"
+        );
+
+
+    let total = 0;
+
+
+    selectedButtons.forEach(button => {
+
+        /*
+           Only the first quarter of each
+           selected hour has a price.
+        */
+
+        if(button.dataset.price){
+
+            total +=
+                Number(button.dataset.price);
+        }
+
+    });
+
+
+    const totalDisplay =
+        card.querySelector(
+            ".selected-total"
+        );
+
+
+    if(totalDisplay){
+
+        totalDisplay.textContent =
+            `Total €${total}`;
+    }
+}
 
 /* =====================
    SELECT TIME
