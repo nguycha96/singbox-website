@@ -661,10 +661,6 @@ function drawRooms(){
             card.querySelector(".time-grid");
 
 
-        const totalDisplay =
-            card.querySelector(".selected-total");
-
-
         const slots =
             createTimeSlots();
 
@@ -689,27 +685,10 @@ function drawRooms(){
 
 
             /*
-               Show the hourly price only
-               on the first quarter of each hour.
+               HINTA EI NÄY TÄSSÄ VAIHEESSA.
+               Hinta lisätään vasta kun asiakas
+               valitsee ajan.
             */
-
-            if(time.endsWith(":00")){
-
-                const price =
-                    getHourlyPrice(
-                        room.id,
-                        selectedDate,
-                        time
-                    );
-
-                button.innerHTML = `
-                    <span>${time}</span>
-                    <small>€${price}</small>
-                `;
-
-                button.dataset.price =
-                    price;
-            }
 
 
             /*
@@ -744,7 +723,7 @@ function drawRooms(){
                         );
 
 
-                        updateRoomTotal(
+                        updateRoomSelection(
                             room.id
                         );
 
@@ -760,57 +739,6 @@ function drawRooms(){
         roomsGrid.appendChild(card);
 
     });
-}
-
-function updateRoomTotal(roomId){
-
-    const card =
-        document.querySelector(
-            `.room-card[data-room-id="${roomId}"]`
-        );
-
-
-    if(!card){
-        return;
-    }
-
-
-    const selectedButtons =
-        card.querySelectorAll(
-            ".time-slot.selected"
-        );
-
-
-    let total = 0;
-
-
-    selectedButtons.forEach(button => {
-
-        /*
-           Only the first quarter of each
-           selected hour has a price.
-        */
-
-        if(button.dataset.price){
-
-            total +=
-                Number(button.dataset.price);
-        }
-
-    });
-
-
-    const totalDisplay =
-        card.querySelector(
-            ".selected-total"
-        );
-
-
-    if(totalDisplay){
-
-        totalDisplay.textContent =
-            `Total €${total}`;
-    }
 }
 
 /* =====================
