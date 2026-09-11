@@ -834,8 +834,67 @@ function selectTime(room, time, button){
 
 
     /*
-       Tarkistetaan, onko tällä huoneella
-       jo valittu tunti.
+       Tarkistetaan, onko klikattu tunti
+       jo valittuna.
+    */
+
+    const hourStart =
+        hours * 60;
+
+
+    const hourSlots = [];
+
+    for(
+        let minutes = hourStart;
+        minutes < hourStart + 60;
+        minutes += 15
+    ){
+
+        const slot =
+            findTimeButton(
+                timeButtons,
+                minutes
+            );
+
+        if(slot){
+            hourSlots.push(slot);
+        }
+    }
+
+
+    const hourAlreadySelected =
+        hourSlots.length === 4 &&
+        hourSlots.every(slot =>
+            slot.classList.contains("selected")
+        );
+
+
+    /*
+       Jos tunti on jo valittu,
+       poistetaan koko tunti.
+       
+       Esimerkiksi:
+       
+       14:00–15:00 valittu
+       klikataan 14:00 uudelleen
+       ↓
+       14:00–15:00 poistuu
+    */
+
+    if(hourAlreadySelected){
+
+        hourSlots.forEach(slot => {
+
+            slot.classList.remove("selected");
+
+        });
+
+        return;
+    }
+
+
+    /*
+       Katsotaan nykyinen valinta.
     */
 
     const selectedButtons =
@@ -845,7 +904,7 @@ function selectTime(room, time, button){
 
 
     /*
-       Jos mitään ei ole vielä valittu,
+       Jos mitään ei ole valittu,
        aloitetaan uusi yhden tunnin varaus.
     */
 
@@ -861,11 +920,11 @@ function selectTime(room, time, button){
 
 
     /*
-       Selvitetään nykyisen valinnan
-       ensimmäinen ja viimeinen vartti.
+       Kerätään nykyisten valintojen ajat.
     */
 
     let selectedTimes = [];
+
 
     selectedButtons.forEach(slot => {
 
@@ -876,8 +935,10 @@ function selectTime(room, time, button){
             return;
         }
 
+
         const [h,m] =
             value.split(":").map(Number);
+
 
         selectedTimes.push(
             h * 60 + m
@@ -889,27 +950,22 @@ function selectTime(room, time, button){
     const firstSelected =
         Math.min(...selectedTimes);
 
+
     const lastSelected =
         Math.max(...selectedTimes);
 
 
     /*
-       Jos klikataan heti nykyisen varauksen
-       perään tulevaa varttia, lisätään
-       yksi tunti.
-       
-       Esimerkiksi:
-       
-       14:00–15:00
-       klikataan 15:00
-       ↓
-       14:00–16:00
+       Jos klikataan heti nykyisen
+       varauksen perään,
+       lisätään yksi tunti.
     */
 
     if(clickedMinutes === lastSelected + 15){
 
         const newEnd =
             lastSelected + 75;
+
 
         for(
             let minutes = lastSelected + 15;
@@ -923,33 +979,42 @@ function selectTime(room, time, button){
                     minutes
                 );
 
+
             if(!slot){
                 return;
             }
 
+
+            /*
+               Jos jokin uuden tunnin
+               vartti on jo varattu,
+               ei tehdä muutosta.
+            */
+
+            if(slot.classList.contains("booked")){
+                return;
+            }
+
+
             slot.classList.add("selected");
         }
+
 
         return;
     }
 
 
     /*
-       Jos klikataan heti ennen nykyistä
-       varausta, lisätään tunti alkuun.
-       
-       Esimerkiksi:
-       
-       15:00–16:00
-       klikataan 14:00
-       ↓
-       14:00–16:00
+       Jos klikataan heti nykyisen
+       varauksen alkuun,
+       lisätään yksi tunti alkuun.
     */
 
     if(clickedMinutes === firstSelected - 15){
 
         const newStart =
             firstSelected - 60;
+
 
         for(
             let minutes = newStart;
@@ -963,12 +1028,20 @@ function selectTime(room, time, button){
                     minutes
                 );
 
+
             if(!slot){
                 return;
             }
 
+
+            if(slot.classList.contains("booked")){
+                return;
+            }
+
+
             slot.classList.add("selected");
         }
+
 
         return;
     }
