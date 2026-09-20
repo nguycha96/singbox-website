@@ -723,7 +723,7 @@ function drawRooms(){
                         );
 
 
-                        updateRoomSelection(
+                        updateRoomTotal(
                             room.id
                         );
 
